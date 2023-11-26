@@ -1,3 +1,7 @@
-pytest
+pandas
+numpy
 scikit-learn
-fastapi[all]
+imbalanced-learn
+matplotlib
+seaborn
+joblib
