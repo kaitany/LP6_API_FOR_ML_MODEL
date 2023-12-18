@@ -1,125 +1,176 @@
-# Machine Learning API using FastAPI
-Develop a Machine Learning API (Application Programming Interface) using FastAPI.
+# 🚀Embedding a Machine Learning API using FastAPI 🚀
+
 
 [![python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-[![MIT licensed](https://img.shields.io/badge/license-mit-blue?style=for-the-badge&logo=appveyor)](./LICENSE)
-![Python](https://img.shields.io/badge/python-3.9-blue.svg)
-
-## Introduction
-
-This is the last project of the program, congratulations for all the work done until now.
-
-In this project, we aim to help you to discover how to create an API that might be requested to interact with a ML model. This is an interesting solution when you want to keep your model architecture secret or to make your model available to users already having an API. By creating an API, and deploying it, your model can so that receive request using the internet protocol as presented by the illustration below.
-
-![API illustration](https://lh3.googleusercontent.com/-qVJ4ZsbjsmH6CnYbojsAR4ImyHV8yxsFVinunH-pX7VCapGvufcXiPak6YVKIrj9ZdiCHwK5UFtQW8yuU5t83pz6fbqN1F2p74OWuT5dObCPnTBuCYr_P1mUg8arbP0WuEt7j_A)
-
-**Source** : *The benefits of Machine Learning APIs - UbiOps*
+[![fastapi](https://img.shields.io/badge/FastAPI-009485?style=for-the-badge&logo=fastapi&logoColor=white)](https://img.shields.io/badge/FastAPI-3776AB?style=for-the-badge&logo=fastapi&logoColor=white)
+![Issues](https://img.shields.io/github/issues/eaedk/streamlit-iris-app?style=for-the-badge&logo=appveyor)
+![PR](https://img.shields.io/github/issues-pr/eaedk/streamlit-iris-app?style=for-the-badge&logo=appveyor)
+[![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 
-## Description
+## Project Description 
+This project builds an API(Application Programming Interface) integrating a ML model using FastAPI to develop a powerful and scalable application for predictive analytics and real-time data processing. 
 
-<!-- 
-[FastAPI](https://fastapi.tiangolo.com/) # 
--->
+## Table of Contents
+1. [Overview Of the Project](#overview)
 
-You will have a minimal API demo with [FastAPI](https://fastapi.tiangolo.com/), this will just serve you to make sure that everything works correctly. Then, you will have to make your own API, this allowing you to interact with a Machine Learning model, that is to say:
-- Pass data through a request;
-- Get the data in using the API;
-- Apply the necessary processing;
-- Submit the processed data to the ML model to make the predictions;
-- Process the predictions obtained and return them as the API's response ot the input request.
+  - [Description of dataset](#dataset)
 
-## Instructions
+2. [Application / Deployed Links](#application)
 
-Your task is to build an API integrating a ML model using FastAPI.
-Clone this repository to use it as a template, do not forget to change the readme at the end of the project.
-Your work should follow these next steps.
+3. [Technology Stack](#technology)
 
-1.  Build a ML model to predict the [Sepsis](https://www.kaggle.com/datasets/chaunguynnghunh/sepsis?select=README.md), during the 2 first weeks. 
+4. [Deliverables](#deliverables)
 
-2.  Build an API using Fast API, during the remaining weeks, to embed the ML model built.
+5. [Execution](#execution)
 
+6. [API Endpoints](#api-endpoints)
 
-Upon completion of your project, you are required to write a blog post
-on your thought process on medium, LinkedIn, personal blog, or any other
-suitable blogging site.
+7. [App Usage](#usage)
 
-## Rubrics
+8. [Resources](#resources)
 
-Machine Learning :
-
--   **Excellent:** Have a pipeline/function that takes inputs and make accurate predictions.
-
--   **Good:** Have a pipeline/function that takes inputs and make predictions.
-
--   **Fair:** Have a pipeline/function that takes inputs but faces bugs while doing predictions.
-
-API :
-
--   **Excellent:** Have an API that works correctly, taking inputs multiple inputs and returning all the related predictions.
-
--   **Good:** Have an API that launches, makes predictions and returns results.
-
--   **Fair:** Have an API that launches but having bugs regarding inputs handling or returning predictions.
-
-## Setup
-
-Install the required packages to be able to run the evaluation locally.
-
-You need to have [`Python 3`](https://www.python.org/) on your system (**a Python version lower than 3.10**). Then you can clone this repo and being at the repo's `root :: repository_name> ...`  follow the steps below:
-
-- Windows:
-        
-        python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
-
-- Linux & MacOs:
-        
-        python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
-
-The both long command-lines have a same structure, they pipe multiple commands using the symbol ` ; ` but you may manually execute them one after another.
-
-1. **Create the Python's virtual environment** that isolates the required libraries of the project to avoid conflicts;
-2. **Activate the Python's virtual environment** so that the Python kernel & libraries will be those of the isolated environment;
-3. **Upgrade Pip, the installed libraries/packages manager** to have the up-to-date version that will work correctly;
-4. **Install the required libraries/packages** listed in the `requirements.txt` file so that it will be allow to import them into the python's scripts and notebooks without any issue.
-
-**NB:** For MacOs users, please install `Xcode` if you have an issue.
-
-## Run FastAPI
-
-- Run the demo apps (being at the repository root):
-        
-  FastAPI:
-    
-    - Demo
-
-          uvicorn src.demo_01.api:app --reload 
-
-    <!-- - Salary prediction
-
-          uvicorn src.salary.api:app --reload  -->
+9. [Contact Information](#ontact)
 
 
-  - Go to your browser at the following address, to explore the api's documentation :
-        
-      http://127.0.0.1:8000/docs
+## 1. Overview Of the Project <a name="overview"></a>
+
+- The sepsis prediction project ia about building a machine learning model designed to accurately predict sepsis illness in intensive care unit (ICU) patients. The model has undergone rigorous training and evaluation to ensure its effectiveness in identifying patients at risk of developing sepsis.
+
+- The project provides a comprehensive solution, including a well-documented FastAPI hosted on a platform like the Hugging Face Model Hub. This API allows seamless integration of the sepsis prediction model into existing healthcare systems, providing healthcare professionals with valuable insights to improve patient care.
+
+- To simplify deployment and usage, the project includes a Dockerfile that streamlines the setup process and ensures the necessary dependencies are installed. This enables easy deployment of the sepsis prediction model in various environments, both local and cloud-based.
 
 
-<!-- ## Screenshots
+### Description of dataset <a name="dataset"></a>
 
 <table>
-    <tr>
-        <th>FastAPI</th>
-        <th>FastAPI</th>
-    </tr>
-    <tr>
-        <td><img src="./screenshots/.png"/></td>
-        <td><img src="./screenshots/.png"/></td>
-    </tr>
-</table> -->
+  <tr>
+    <th>Column Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>ID</td>
+    <td>Unique number to represent patient ID</td>
+  </tr>
+  <tr>
+    <td>PRG</td>
+    <td>Plasma glucose</td>
+  </tr>
+  <tr>
+    <td>PL</td>
+    <td>Blood Work Result-1 (mu U/ml)</td>
+  </tr>
+  <tr>
+    <td>PR</td>
+    <td>Blood Pressure (mm Hg)</td>
+  </tr>
+  <tr>
+    <td>SK</td>
+    <td>Blood Work Result-2 (mm)</td>
+  </tr>
+  <tr>
+    <td>TS</td>
+    <td>Blood Work Result-3 (mu U/ml)</td>
+  </tr>
+  <tr>
+    <td>M11</td>
+    <td>Body mass index (weight in kg/(height in m)^2)</td>
+  </tr>
+  <tr>
+    <td>BD2</td>
+    <td>Blood Work Result-4 (mu U/ml)</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>Patients age (years)</td>
+  </tr>
+  <tr>
+    <td>Insurance</td>
+    <td>If a patient holds a valid insurance card</td>
+  </tr>
+  <tr>
+    <td>Sepssis</td>
+    <td>Positive: if a patient in ICU will develop sepsis, and Negative: otherwise</td>
+  </tr>
+</table>
+
+## 2. Application / Deployed Links <a name="application"></a>
+<table>
+  <tr>
+    <th>API</th>
+    <th>Deployed links</th>
+  </tr>
+  <tr>
+    <td>FastApi</td>
+    <td><a href="https://bright1-sepsis-prediction-api.hf.space/docs">Sepsis Prediction API-huggingface</a></td>
+  </tr>
+  <tr>
+  
+  </tr>
+
+</table>
 
 
-## Resources
+## 3. Technology Stack <a name="technology"></a>
+ 
+<table>
+  <tr>
+    <th>Technology</th>
+    <th>Version</th>
+  </tr>
+  <tr>
+    <td>Python</td>
+    <td>3.11.5</td>
+  </tr>
+  <tr>
+    <td>FastAPI</td>
+    <td>0.105.0</td>
+  </tr>
+  <tr>
+    <td>Uvicorn</td>
+    <td>0.24.0</td>
+  </tr>
+    <tr>
+    <td>Scikit-learn</td>
+    <td>1.3.2</td>
+  </tr>
+  </tr>
+    <tr>
+    <td>Pandas</td>
+    <td>2.1.4</td>
+  </tr>
+  </tr>
+    <tr>
+    <td>Jinja2</td>
+    <td>3.1.2</td>
+  </tr>
+  
+</table>
+
+## 4. Deliverables <a name="deliverables"></a>
+1. A jupyter notebook for training a classification model
+2. A classification Model
+3. An API App built with FastApi
+4. A main.py that make calls to the build and hosted API
+5. A Dockerfile for easy deployment 
+
+## 8. App Usage <a name="usage"></a>
+To test the various endpoints of the API using the provided documentation, follow these steps:
+
+1. Start by accessing the API documentation, which provides detailed information about the available endpoints and their functionalities.
+
+2. Locate the section that describes the input fields and parameters required for each endpoint. It will specify the expected data format, such as JSON or form data, and the necessary input fields.
+
+4. Enter the required input data into the corresponding input fields or parameters as specified in the documentation.
+
+5. Send the request by clicking the "Execute" button or using the appropriate method in your chosen tool. The API will process the request and generate the output based on the provided inputs.
+
+6. Retrieve the response from the API, which will contain the generated output. This output may include predictions, probability scores, or any other relevant information related to sepsis prediction.
+
+7. Repeat the process by varying the input data to explore the capabilities of the API. Make sure to follow the documentation's guidelines for each endpoint to ensure accurate results.
+
+## 9. Resources <a name="resources"></a>
 Here are some ressources you would read to have a good understanding of FastAPI :
 - [Tutorial - User Guide](https://fastapi.tiangolo.com/tutorial/)
 - [Video - Building a Machine Learning API in 15 Minutes ](https://youtu.be/C82lT9cWQiA)
@@ -129,16 +180,18 @@ Here are some ressources you would read to have a good understanding of FastAPI 
 - [Http status codes](https://www.linkedin.com/feed/update/urn:li:activity:7017027658400063488?utm_source=share&utm_medium=member_desktop)
 
 
+## 10. Contact Information <a name="contact"></a>
 
-
-
-## Contributing
-
-Feel free to make a PR or report an issue 😃.
-
-Oh, one more thing, please do not forget to put a description when you make your PR 🙂.
-
-## Author
-
-- [Emmanuel KOUPOH](https://www.linkedin.com/in/esa%C3%AFe-alain-emmanuel-dina-koupoh-7b974a17a/)
-[![My Twitter Link](https://img.shields.io/twitter/follow/emmanuelkoupoh?style=social)](https://twitter.com/emmanuelkoupoh)
+<table>
+  <tr>
+    <th>Name</th>
+    <th>LinkedIn</th>
+    <th>GitHub</th>
+    
+  </tr>
+  <tr>
+    <td>Benjamin Kaitany</td>
+    <td><a href="https://www.linkedin.com/in/benjamin-kaitany-5017681b2/">@kaitany</a></td>
+    <td><a href="https://github.com/kaitany">@kaitany</a></td>
+  </tr>
+</table>
